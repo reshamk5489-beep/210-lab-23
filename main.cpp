@@ -18,6 +18,7 @@ int main() {
     bool again;
     int choice;
     bool exit = false;
+    list<Goat> trip;
 
     // read & populate arrays for names and colors
     ifstream fin("names.txt");
@@ -37,6 +38,7 @@ int main() {
         switch(choice)
         {
             case 1:
+                add_goat(trip, names, colors);
                 break;
             case 2:
                 break;
@@ -81,6 +83,8 @@ void add_goat(list<Goat> &trip, string names[], string colors[])
 {
     string name = names[rand() % SZ_NAMES];
     string color = colors[rand() % SZ_COLORS];
+    int age = rand() % MAX_AGE;
 
+    trip.emplace_back(name, color, age);
 }
 
