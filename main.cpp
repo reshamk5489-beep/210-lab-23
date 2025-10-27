@@ -30,8 +30,33 @@ int main() {
     fin1.close();
 
 
-
-
     return 0;
 }
 
+int main_menu()
+{
+    int choice;
+    bool exit = false;
+
+    cout << "*** GOAT MANAGER 3001 ***" << endl;
+    cout << "[1] Add a goat" << endl;
+    cout << "[2] Delete a goat" << endl;
+    cout << "[3] List goats" << endl;
+    cout << "[4] Quit" << endl;
+    cout << "Choice -->" << endl;
+
+    while(exit == false)
+    {
+        cin >> choice;
+
+        if (choice > 4 || choice < 1)
+        {
+            cout << "Please enter a valid choice (between 1-4)" << endl;
+        }
+        else
+        {
+            // right choice
+            
+        }
+    }
+}
