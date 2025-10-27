@@ -136,14 +136,18 @@ void delete_goat(list<Goat> &trip)
 {
     int choice;
     int count = 1;
+    cout << "Selecting goat: " << endl;
     choice = select_goat(trip);
     cout << "Selected goat: " << choice << endl;
-    for (auto goat : trip)
+    auto it = trip.begin();
+    while (it != trip.end())
     {
-        if (choice == count)
+        if (count == choice)
         {
-            trip.remove(goat);
+            cout << "Removing goat: " << it->get_name() << endl; 
+            it = trip.erase(it); 
             return;
         }
+        ++it;
     }
 }
