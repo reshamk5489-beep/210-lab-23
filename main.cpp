@@ -96,7 +96,36 @@ void display_trip(list<Goat> trip)
     int count = 1;
     for (auto goat : trip)
     {
-        cout << goat.get_name() << goat.get_age() << goat.get_color() << endl;
+        cout << "\t[" << count << "] " << goat.get_name() 
+            << " (" << goat.get_age() << ", " << goat.get_color() 
+            << ")" << endl;
+        count++;
     }
 }
 
+int select_goat(list<Goat> trip)
+{
+    int choice;
+    display_trip(trip);
+
+    if (trip.size() == 0)
+    {
+
+    }
+    
+    cout << "Please choose a number to select a goat: ";
+
+    while(true)
+    {
+        cin >> choice;
+
+        if (choice > trip.size() || choice < 1)
+        {
+            cout << "Please enter a valid choice" << endl;
+        }
+        else
+        {
+            return choice;
+        }
+    } 
+}
