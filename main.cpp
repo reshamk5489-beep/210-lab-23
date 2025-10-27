@@ -41,6 +41,7 @@ int main() {
                 add_goat(trip, names, colors);
                 break;
             case 2:
+                delete_goat(trip);
                 break;
             case 3:
                 display_trip(trip);
@@ -110,13 +111,14 @@ int select_goat(list<Goat> trip)
 
     if (trip.size() == 0)
     {
-
+        cout << "The goat list is empty. Nothing to select." << endl;
+        return 0;
     }
-    
-    cout << "Please choose a number to select a goat: ";
 
     while(true)
     {
+        cout << "Please choose a number to select a goat: ";
+
         cin >> choice;
 
         if (choice > trip.size() || choice < 1)
@@ -128,4 +130,11 @@ int select_goat(list<Goat> trip)
             return choice;
         }
     } 
+}
+
+void delete_goat(list<Goat> &trip)
+{
+    int choice;
+    choice = select_goat(trip);
+    trip.
 }
