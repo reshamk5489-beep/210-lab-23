@@ -31,7 +31,7 @@ int main() {
     while (fin1 >> colors[i++]);
     fin1.close();
 
-    while (exit == true)
+    while (exit == false)
     {
         choice = main_menu();
         switch(choice)
@@ -76,3 +76,11 @@ int main_menu()
         }
     }
 }
+
+void add_goat(list<Goat> &trip, string names[], string colors[])
+{
+    string name = names[rand() % SZ_NAMES];
+    string color = colors[rand() % SZ_COLORS];
+
+}
+
