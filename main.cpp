@@ -43,6 +43,7 @@ int main() {
             case 2:
                 break;
             case 3:
+                display_trip(trip);
                 break;
             case 4:
                 exit = true;
@@ -85,6 +86,17 @@ void add_goat(list<Goat> &trip, string names[], string colors[])
     string color = colors[rand() % SZ_COLORS];
     int age = rand() % MAX_AGE;
 
-    trip.emplace_back(name, color, age);
+    Goat goat(name, age, color);
+
+    trip.push_back(goat);
+}
+
+void display_trip(list<Goat> trip)
+{
+    int count = 1;
+    for (auto goat : trip)
+    {
+        cout << goat.get_name() << goat.get_age() << goat.get_color() << endl;
+    }
 }
 
